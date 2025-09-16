@@ -1,3 +1,7 @@
+/* ==========================
+   Part 1: Global, Navbar, Hero, About
+========================== */
+
 /* Reset some default styles */
 * {
   box-sizing: border-box;
@@ -43,7 +47,7 @@
 
 .nav-links a:hover {
   font-size: 18px;
-  color: #d32f2f; /* example highlight */
+  color: #d32f2f;
 }
 
 /* Right buttons */
@@ -117,55 +121,29 @@
   display: block;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ==========================
    Unique Hero Container
 ========================== */
 .unique-hero {
   position: relative;
-  max-width: 95%;       /* Scales on smaller screens */
-  width: 1200px;        /* Max width on large screens */
-  margin: 40px auto;    /* Centered horizontally */
-  border-radius: 25px;  /* Rounded edges */
+  max-width: 95%;
+  width: 1200px;
+  margin: 40px auto;
+  border-radius: 25px;
   overflow: hidden;
   box-shadow: 0 15px 30px rgba(255, 219, 12, 0.3);
-  background: #111;     /* Dark background behind images */
+  background: #111;
 }
 
-/* ==========================
-   Wrapper for slides (taller hero)
-========================== */
+/* Wrapper for slides */
 .hero-wrapper {
   position: relative;
-  height: 700px;        /* Increased height for tall hero */
+  height: 700px;
 }
 
-/* ==========================
-   Individual slides
-========================== */
+/* Individual slides */
 .hero-slide {
-  position: absolute;    /* Stack slides */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -176,23 +154,19 @@
 
 .hero-slide.active {
   opacity: 1;
-  position: relative;    /* Show active slide normally */
+  position: relative;
 }
 
-/* ==========================
-   Images inside slides
-========================== */
+/* Images inside slides */
 .hero-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;     /* Cover the container */
-  border-radius: 25px;   /* Match container rounded edges */
+  object-fit: cover;
+  border-radius: 25px;
   display: block;
 }
 
-/* ==========================
-   Captions
-========================== */
+/* Captions */
 .hero-caption {
   position: absolute;
   bottom: 20px;
@@ -206,9 +180,7 @@
   border-radius: 15px;
 }
 
-/* ==========================
-   Navigation buttons
-========================== */
+/* Navigation buttons */
 .hero-btn {
   position: absolute;
   top: 50%;
@@ -236,16 +208,14 @@
   right: 10px;
 }
 
-/* ==========================
-   Responsive for tablets
-========================== */
+/* Responsive for tablets */
 @media (max-width: 900px) {
   .unique-hero {
     width: 95%;
   }
 
   .hero-wrapper {
-    height: 500px;      /* Adjust height for tablets */
+    height: 500px;
   }
 
   .hero-caption {
@@ -259,12 +229,10 @@
   }
 }
 
-/* ==========================
-   Responsive for mobile
-========================== */
+/* Responsive for mobile */
 @media (max-width: 600px) {
   .hero-wrapper {
-    height: 350px;      /* Adjust height for mobile */
+    height: 350px;
   }
 
   .hero-caption {
@@ -278,27 +246,12 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ==========================
+   About Section
+========================== */
 .magazine-about-clean {
-  background: #fff;        /* White background */
-  color: #000;             /* Black text */
+  background: #fff;
+  color: #000;
   max-width: 900px;
   margin: 60px auto;
   padding: 40px 30px;
@@ -308,10 +261,9 @@
   position: relative;
 }
 
-/* Paragraph styling - large but compact */
 .magazine-about-clean p {
-  font-size: 1.5rem;       /* Large but readable */
-  line-height: 1.6;        /* Less space between lines */
+  font-size: 1.5rem;
+  line-height: 1.6;
   margin: 25px auto;
   position: relative;
   opacity: 0;
@@ -331,7 +283,7 @@
 .magazine-about-clean::before {
   width: 120px;
   height: 120px;
-  background: #ffdd0c;    /* subtle yellow */
+  background: #ffdd0c;
   top: -30px;
   left: -30px;
 }
@@ -339,24 +291,21 @@
 .magazine-about-clean::after {
   width: 100px;
   height: 100px;
-  background: #ff385c;    /* subtle red */
+  background: #ff385c;
   bottom: -20px;
   right: -20px;
 }
 
 
-
-
-
-
-
-
-
-
-
+/* ==========================
+   Part 2: Services, Locations, Contact, Footer
+========================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 
+/* ==========================
+   Services Section
+========================== */
 .magazine-services-final {
   max-width: 1300px;
   margin: 100px auto;
@@ -370,7 +319,6 @@
   font-size: 3rem;
   margin-bottom: 60px;
   color: #000;
-  position: relative;
 }
 
 /* Grid for 2x2 services */
@@ -400,7 +348,7 @@
   height: 280px;
   object-fit: cover;
   display: block;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.3); /* darker shadow */
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
   border-radius: 30px 30px 0 0;
 }
 
@@ -462,7 +410,7 @@
   right: -50px;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for Services */
 @media(max-width: 900px) {
   .services-grid {
     grid-template-columns: 1fr;
@@ -479,20 +427,9 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
-
+/* ==========================
+   Locations Section
+========================== */
 .magazine-locations-final {
   max-width: 1300px;
   margin: 100px auto;
@@ -530,7 +467,6 @@
   transform: translateY(50px);
 }
 
-/* Images */
 .location-card img {
   width: 100%;
   height: 250px;
@@ -540,14 +476,12 @@
   box-shadow: 0 15px 40px rgba(0,0,0,0.3);
 }
 
-/* Text inside card */
 .location-card p {
   font-size: 1.2rem;
   margin: 5px 0;
   color: #000;
 }
 
-/* Hover effect */
 .location-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 30px 60px rgba(0,0,0,0.35);
@@ -610,7 +544,7 @@
   right: -50px;
 }
 
-/* Responsive */
+/* Responsive Locations */
 @media(max-width: 900px) {
   .locations-grid {
     grid-template-columns: 1fr;
@@ -627,22 +561,9 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ==========================
+   Contact Section
+========================== */
 .magazine-contact {
   max-width: 1300px;
   margin: 100px auto;
@@ -658,7 +579,6 @@
   color: #000;
 }
 
-/* Contact cards grid */
 .contact-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -715,7 +635,7 @@
   box-shadow: 0 20px 50px rgba(255, 221, 12, 0.15);
 }
 
-/* Subtle background accents */
+/* Subtle background accents for contact section */
 .magazine-contact::before,
 .magazine-contact::after {
   content: '';
@@ -740,8 +660,8 @@
   right: -50px;
 }
 
-/* Responsive adjustments */
-@media(max-width: 1000px){
+/* Responsive adjustments for Contact */
+@media(max-width: 1000px) {
   .contact-cards {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -753,24 +673,9 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ==========================
+   Footer Section
+========================== */
 .magazine-footer {
   background: #000;
   color: #fff;
@@ -792,7 +697,7 @@
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
   margin-bottom: 15px;
-  color: #ffdd0c; /* subtle yellow */
+  color: #ffdd0c;
 }
 
 .footer-col p, .footer-col ul, .footer-col li {
@@ -810,13 +715,19 @@
   margin: 6px 0;
 }
 
+.footer-col li:hover {
+  color: #ffdd0c;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
 .footer-bottom {
   font-size: 0.9rem;
   color: rgba(255,255,255,0.6);
   margin-top: 30px;
 }
 
-/* Subtle background accents */
+/* Footer background accents */
 .magazine-footer::before,
 .magazine-footer::after {
   content: '';
@@ -841,14 +752,7 @@
   right: -30px;
 }
 
-/* Hover subtle effect for lists */
-.footer-col li:hover {
-  color: #ffdd0c;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-/* Responsive */
+/* Responsive Footer */
 @media(max-width: 1000px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
@@ -862,3 +766,4 @@
     text-align: center;
   }
 }
+
