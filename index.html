@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navbar Example</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="navbar-container">
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <img src="logo.png" alt="Logo" />
+    </a>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Stores</a>
+      <a href="#">Catering</a>
+      <a href="#">Careers</a>
+    </nav>
+
+    <!-- Right Buttons -->
+    <div class="nav-right">
+      <div class="account-dropdown">
+        <button class="dropbtn">Account ▼</button>
+        <div class="dropdown-content">
+          <a href="#">Login</a>
+          <a href="#">Register</a>
+        </div>
+      </div>
+      <a href="#" class="contact-btn">Contact Us</a>
+    </div>
+  </div>
+</header>
+
+
+<div class="unique-hero">
+  <button class="hero-btn left-btn">&#10094;</button>
+
+  <div class="hero-wrapper">
+    <div class="hero-slide active">
+      <img src="hero1.jpg" alt="Hero 1">
+      <div class="hero-caption">Hero 1</div>
+    </div>
+
+    <div class="hero-slide">
+      <img src="hero2.jpg" alt="Hero 2">
+      <div class="hero-caption">Hero 2</div>
+    </div>
+
+    <div class="hero-slide">
+      <img src="hero3.jpg" alt="Hero 3">
+      <div class="hero-caption">Hero 3</div>
+    </div>
+
+    <div class="hero-slide">
+      <img src="hero4.jpg" alt="Hero 4">
+      <div class="hero-caption">Hero 4</div>
+    </div>
+
+  </div>
+  <button class="hero-btn right-btn">&#10095;</button>
+</div>
+
+<script>
+(function() {
+  // Unique hero namespace
+  const heroContainer = document.querySelector('.unique-hero');
+  if (!heroContainer) return; // Exit if hero not on page
+
+  const slides = heroContainer.querySelectorAll('.hero-slide');
+  const prevBtn = heroContainer.querySelector('.left-btn');
+  const nextBtn = heroContainer.querySelector('.right-btn');
+  let currentIndex = 0;
+  let autoSlideInterval;
+
+  // Show a specific slide
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+  }
+
+  // Previous slide
+  function prevSlide() {
+    currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+    showSlide(currentIndex);
+  }
+
+  // Next slide
+  function nextSlide() {
+    currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+    showSlide(currentIndex);
+  }
+
+  // Event listeners
+  prevBtn.addEventListener('click', () => {
+    prevSlide();
+    resetAutoSlide();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    nextSlide();
+    resetAutoSlide();
+  });
+
+  // Auto slide with unique interval
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(nextSlide, 6000); // every 6 sec
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+  }
+
+  // Initialize
+  showSlide(currentIndex);
+  startAutoSlide();
+
+})();
+</script>
+
+
+
+
+
+
+<main>
+
+
+<div class="magazine-about-clean">
+  <p>
+    At Our Kitchen, we’re humble yet innovative, serving local and beloved classics with a fresh twist. Whether you’re craving a light snack or a hearty, filling meal, we’ve got you covered with flavors that make every bite memorable.
+  </p>
+  <p>
+    From platters for gatherings to designing your own custom meals, we cater to your every need. Our team is passionate about bringing people together through food, and we’re always ready to pop up at schools, events, or special occasions, delivering joy wherever you need it.
+  </p>
+  <p>
+    Give us a call and let us make your day tastier and more exciting—because great food is meant to be shared, savored, and celebrated!
+  </p>
+</div>
+
+
+<script>
+(function(){
+  const paragraphs = document.querySelectorAll('.magazine-about-clean p');
+
+  function animateOnScroll() {
+    const trigger = window.innerHeight * 0.85;
+
+    paragraphs.forEach(p => {
+      const top = p.getBoundingClientRect().top;
+
+      if(top < trigger){
+        p.style.opacity = '1';
+        p.style.transform = 'translateY(0)';
+      } else {
+        p.style.opacity = '0';
+        p.style.transform = 'translateY(30px)';
+      }
+    });
+  }
+
+  window.addEventListener('scroll', animateOnScroll);
+  window.addEventListener('load', animateOnScroll);
+})();
+</script>
+
+
+
+
+
+
+<section class="magazine-services-final">
+
+  <h2>Our Services</h2>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <img src="school.jpg" alt="Schools and Business Canteens">
+      <h3>Schools & Business Canteens</h3>
+    </div>
+
+    <div class="service-card">
+      <img src="customplatter.jpg" alt="Custom or Pre-designed Platters">
+      <h3>Platters - Custom or Pre-Designed</h3>
+    </div>
+
+    <div class="service-card">
+      <img src="weddingfood.jpg" alt="Weddings & Events">
+      <h3>Weddings & More Events</h3>
+    </div>
+
+    <div class="service-card">
+      <img src="foodtruck.jpg" alt="Mobile Food Truck">
+      <h3>Mobile Food Truck</h3>
+    </div>
+
+  </div>
+
+  <a href="booking.html" class="book-service-btn">Book a Service</a>
+
+</section>
+
+
+
+
+<script>
+(function(){
+  const cards = document.querySelectorAll('.service-card');
+
+  function animateOnScroll() {
+    const trigger = window.innerHeight * 0.85;
+
+    cards.forEach((card, index) => {
+      const top = card.getBoundingClientRect().top;
+
+      if(top < trigger){
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, index * 200); // staggered delay for slow, elegant appearance
+      } else {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(50px)';
+      }
+    });
+  }
+
+  window.addEventListener('scroll', animateOnScroll);
+  window.addEventListener('load', animateOnScroll);
+})();
+</script>
+
+
+
+
+</main>
+
+<script>
+(function(){
+  const sections = document.querySelectorAll('.magazine-main .magazine-about p, .service-card, .location-card');
+
+  function animateOnScroll() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+
+      if(sectionTop < triggerBottom) {
+        section.classList.add('magazine-animate');
+      } else {
+        section.classList.remove('magazine-animate');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', animateOnScroll);
+  window.addEventListener('load', animateOnScroll);
+})();
+</script>
+
+
+
+
+<section class="magazine-locations-final">
+
+  <h2>Our Locations</h2>
+
+  <div class="locations-grid">
+
+    <div class="location-card">
+      <img src="location1.png" alt="Midrand Location">
+      <p>34 Alsation Rd</p>
+      <p>Glen Austin AH</p>
+      <p>Midrand</p>
+      <p>1685</p>
+    </div>
+
+    <div class="location-card">
+      <img src="location2.png" alt="Thembisa Location">
+      <p>13 Mgngoma Street</p>
+      <p>Enxiweni</p>
+      <p>Thembisa</p>
+      <p>1632</p>
+    </div>
+
+  </div>
+
+  <a href="callandcollect.html" class="call-collect-btn">
+    <img src="callandcollect.png" alt="Call & Collect">
+    Order Call & Collect at Your Nearest Location
+  </a>
+
+</section>
+
+
+
+<script>
+(function(){
+  const cards = document.querySelectorAll('.location-card');
+
+  function animateOnScroll() {
+    const trigger = window.innerHeight * 0.85;
+
+    cards.forEach((card, index) => {
+      const top = card.getBoundingClientRect().top;
+
+      if(top < trigger){
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, index * 200); // slow, staggered animation
+      } else {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(50px)';
+      }
+    });
+  }
+
+  window.addEventListener('scroll', animateOnScroll);
+  window.addEventListener('load', animateOnScroll);
+})();
+</script>
+
+<section class="magazine-contact">
+
+  <h2>Get in Touch</h2>
+
+  <div class="contact-cards">
+
+    <div class="contact-card">
+      <h3>Phone</h3>
+      <p>+27 82 123 4567</p>
+      <p>+27 83 987 6543</p>
+    </div>
+
+    <div class="contact-card">
+      <h3>Email</h3>
+      <p>info@ourkitchen.co.za</p>
+      <p>support@ourkitchen.co.za</p>
+    </div>
+
+    <div class="contact-card">
+      <h3>Social</h3>
+      <p>Instagram: @ourkitchen</p>
+      <p>Facebook: Our Kitchen SA</p>
+    </div>
+
+  </div>
+
+  <div class="contact-buttons">
+    <a href="booking.html" class="contact-btn">Book a Service</a>
+    <a href="inquiry.html" class="contact-btn">Send an Inquiry</a>
+  </div>
+
+</section>
+
+<script>
+(function(){
+  const cards = document.querySelectorAll('.contact-card');
+
+  function animateOnScroll() {
+    const trigger = window.innerHeight * 0.85;
+
+    cards.forEach((card, index) => {
+      const top = card.getBoundingClientRect().top;
+
+      if(top < trigger){
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, index * 200);
+      } else {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(50px)';
+      }
+    });
+  }
+
+  window.addEventListener('scroll', animateOnScroll);
+  window.addEventListener('load', animateOnScroll);
+})();
+</script>
+
+
+</body>
+
+
+
+
+<footer class="magazine-footer">
+
+  <div class="footer-grid">
+
+    <div class="footer-col">
+      <h3>About Us</h3>
+      <p>We serve local and beloved classics with a fresh twist. From light snacks to hearty meals, we bring joy to every table.</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Services</h3>
+      <ul>
+        <li>Schools & Business Canteens</li>
+        <li>Custom Platters</li>
+        <li>Weddings & Events</li>
+        <li>Mobile Food Truck</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Locations</h3>
+      <p>Midrand: 34 Alsation Rd, Glen Austin AH</p>
+      <p>Thembisa: 13 Mgngoma Street, Enxiweni</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Follow Us</h3>
+      <p>Instagram: @ourkitchen</p>
+      <p>Facebook: Our Kitchen SA</p>
+      <p>Email: info@ourkitchen.co.za</p>
+    </div>
+
+  </div>
+
+  <p class="footer-bottom">© 2025 Our Kitchen. All rights reserved.</p>
+
+</footer>
+
+
+
+
+</html>
